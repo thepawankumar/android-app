@@ -9,7 +9,7 @@ jobs:
     steps:
       - checkout
       - android/run-tests:
-          test-command: ./gradlew lint testDebug --continue
+          test-command: chmod +x ./gradlew lint testDebug --continue
       - android/start-emulator-and-run-tests:
           test-command: chmod +x ./gradlew connectedDebugAndroidTest
           system-image: system-images;android-25;google_apis;x86
@@ -17,7 +17,7 @@ jobs:
       - run:
           name: Assemble release build
           command: |
-            ./gradlew assemblyrelease
+            chmod +x ./gradlew assemblyrelease
 workflows:
   sample:
     jobs:
