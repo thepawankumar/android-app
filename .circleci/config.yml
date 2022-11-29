@@ -11,10 +11,9 @@ jobs:
       - android/run-tests:
           test-command: ./gradlew lint testDebug --continue
       - android/start-emulator-and-run-tests:
-          test-command: ./gradlew connectedDebugAndroidTest
+          test-command: chmod +x ./gradlew connectedDebugAndroidTest
           system-image: system-images;android-25;google_apis;x86
-          name: Change wrapper permissions
-        run: chmod +x ./gradlew
+          
       - run:
           name: Assemble release build
           command: |
